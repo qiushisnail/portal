@@ -1,0 +1,33 @@
+#wrap {
+  height: 100%;
+}
+#header .headMain {
+  width: 1110px;
+  height: 80px;
+  margin: 0 auto;
+}
+#header .headMain .logo {
+  float: left;
+  margin-top: 30px;
+}
+#header .headMain nav {
+  float: right;
+  margin-top: 50px;
+}
+#header .headMain nav > .list > li {
+  float: left;
+  position: relative;
+  margin-left: 40px;
+}
+#header .headMain nav > .list > li .up {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #000000;
+  width: 0;
+  overflow: hidden;
+  transition: 0.5s width;
+}
+#header .headMain nav > .list > li a:hover .up {
+  width: 100%;
+}
