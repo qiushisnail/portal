@@ -1,10 +1,15 @@
 #wrap {
   height: 100%;
 }
+/*header 开始*/
+#header {
+  width: 100%;
+}
 #header .headMain {
   width: 1110px;
   height: 80px;
   margin: 0 auto;
+  position: relative;
 }
 #header .headMain .logo {
   float: left;
@@ -31,3 +36,136 @@
 #header .headMain nav > .list > li a:hover .up {
   width: 100%;
 }
+#header .headMain .arrow {
+  position: absolute;
+  width: 21px;
+  height: 11px;
+  background: url("../img/menuIndicator.png");
+  bottom: -11px;
+  left: 50%;
+  transition: 0.5s left;
+  z-index: 9;
+}
+/*header end*/
+
+/* content start*/
+#content {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background-color: grey;
+}
+#content .list {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  transition: 1s top;
+}
+#content .list > li {
+  position: relative;
+  background-position: 50% 50% !important;
+}
+#content .list > li > section {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1110px;
+  height: 520px;
+  margin: auto;
+}
+#content .list .home {
+  background: url("../img/bg1.jpg") no-repeat;
+}
+#content .list .course {
+  background: url("../img/bg2.jpg") no-repeat;
+}
+
+/*第三屏 start*/
+#content .list .works {
+  position: relative;
+  background: url("../img/bg3.jpg") no-repeat;
+}
+#content .list .works .works1 {
+  margin: 50px 0 100px 50px;
+}
+#content .list .works .works2 {
+  margin-left: 50px;
+}
+#content .list .works .works2 > .item {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin-right: 1px;
+  width: 220px;
+  height: 133px;
+}
+#content .list .works .works2 > .item img {
+  transition: 1s transform;
+}
+#content .list .works .works2 > .item:last-child {
+  width: 332px;
+}
+#content .list .works .works2 > .item > .mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding: 15px;
+  color: white;
+  background-color: rgb(25, 25, 25);
+  opacity: 0;
+  transition: 1s opacity;
+}
+#content .list .works .works2 > .item > .mask > .icon {
+  width: 32px;
+  height: 34px;
+  margin: 0 auto;
+  margin-top: 10px;
+  background: url("../img/zoomico.png") no-repeat;
+  transition: 0.5s background-position;
+}
+#content .list .works .works2 > .item:hover img {
+  transform: rotate(30deg) scale(1.5);
+}
+#content .list .works .works2 > .item:hover .mask {
+  opacity: 0.8;
+}
+#content .list .works .works2 > .item > .mask > .icon:hover {
+  background-position: 0 -36px;
+}
+#content .list .works .works3 {
+  position: absolute;
+  left: 900px;
+  top: 170px;
+  height: 191px;
+  width: 167px;
+  background: url("../img/robot.png") no-repeat;
+  animation: works3Move 4s linear infinite;
+}
+@keyframes works3Move {
+  0% {
+    transform: translateX(0px) rotateY(0deg);
+  }
+  49% {
+    transform: translateX(-490px) rotateY(0deg);
+  }
+  50% {
+    transform: translateX(-500px) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(0px) rotateY(180deg);
+  }
+}
+/*第三屏 end*/
+#content .list .about {
+  background: url("../img/bg4.jpg") no-repeat;
+}
+#content .list .team {
+  background: url("../img/bg5.jpg") no-repeat;
+}
+/*content end*/
