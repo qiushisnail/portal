@@ -79,14 +79,122 @@
 #content .list .home {
   background: url("../img/bg1.jpg") no-repeat;
 }
+/*第二屏*/
 #content .list .course {
   background: url("../img/bg2.jpg") no-repeat;
 }
+#content .list .course .course1 {
+  margin: 50px;
+}
+#content .list .course .course2 {
+  margin-left: 50px;
+  width: 400px;
+}
+
+#content .list .course .course3 {
+  position: absolute;
+  top: 70px;
+  right: 50px;
+  width: 480px;
+}
+#content .list .course .course3 > .line {
+  position: absolute;
+  top: -7px;
+  background: url("../img/plus_row.png");
+  width: 9px;
+  height: 410px;
+}
+#content .list .course .course3 > .line:nth-of-type(1) {
+  left: -5px;
+}
+#content .list .course .course3 > .line:nth-of-type(2) {
+  margin-left: 115px;
+}
+#content .list .course .course3 > .line:nth-of-type(3) {
+  left: 235px;
+}
+#content .list .course .course3 > .line:nth-of-type(4) {
+  left: 355px;
+}
+#content .list .course .course3 > .line:nth-of-type(5) {
+  left: 475px;
+}
+#content .list .course .course3 .item {
+  float: left;
+  position: relative;
+  width: 120px;
+  height: 132px;
+  perspective: 500px;
+  transform-style: preserve-3d;
+}
+#content .list .course .course3 .item .face,
+#content .list .course .course3 .item .backface {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #009ee0;
+  box-sizing: border-box;
+  padding: 15px;
+  transition: 0.5s transform;
+}
+#content .list .course .course3 .item .face {
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+#content .list .course .course3 .item .backface {
+  background-position: 50% 50% !important;
+}
+#content > .list > .course .course3 .item:nth-of-type(1) .backface {
+  background: url(../img/bks.png) no-repeat;
+}
+#content > .list > .course .course3 .item:nth-of-type(2) .backface {
+  background: url(../img/apcoa.png) no-repeat;
+}
+#content > .list > .course .course3 .item:nth-of-type(3) .backface {
+  background: url(../img/bks.png) no-repeat;
+}
+#content > .list > .course .course3 .item:nth-of-type(4) .backface {
+  background: url(../img/gu.png) no-repeat;
+}
+#content > .list > .course .course3 .item:nth-of-type(5) .backface {
+  background: url(../img/hlx.png) no-repeat;
+}
+#content > .list > .course .course3 .item:nth-of-type(6) .backface {
+  background: url(../img/lbs.png) no-repeat;
+}
+#content > .list > .course .course3 .item:nth-of-type(7) .backface {
+  background: url(../img/leonberg.png) no-repeat;
+}
+#content > .list > .course .course3 .item:nth-of-type(8) .backface {
+  background: url(img/pcwelt.png) no-repeat;
+}
+#content > .list > .course .course3 .item:nth-of-type(9) .backface {
+  background: url(../img/tata.png) no-repeat;
+}
+#content > .list > .course .course3 .item:nth-of-type(10) .backface {
+  background: url(../img/bks.png) no-repeat;
+}
+#content > .list > .course .course3 .item:nth-of-type(11) .backface {
+  background: url(../img/lbs.png) no-repeat;
+}
+#content > .list > .course .course3 .item:nth-of-type(12) .backface {
+  background: url(../img/leonberg.png) no-repeat;
+}
+#content .list .course .course3 .item:hover .face {
+  transform: rotateY(360deg);
+}
+#content .list .course .course3 .item:hover .backface {
+  transform: rotateY(180deg);
+}
+
+/*第二屏 end*/
 
 /*第三屏 start*/
 #content .list .works {
   position: relative;
-  background: url("../img/bg3.jpg") no-repeat;
+  background: url("../img/bg2.jpg") no-repeat;
 }
 #content .list .works .works1 {
   margin: 50px 0 100px 50px;
@@ -163,7 +271,7 @@
 }
 /*第三屏 end*/
 #content .list .about {
-  background: url("../img/bg4.jpg") no-repeat;
+  background: url("../img/bg3.jpg") no-repeat;
 }
 #content .list .team {
   background: url("../img/bg5.jpg") no-repeat;
