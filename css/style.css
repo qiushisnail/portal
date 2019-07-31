@@ -6,7 +6,7 @@
   width: 100%;
 }
 #header .headMain {
-  width: 1110px;
+  width: 1100px;
   height: 80px;
   margin: 0 auto;
   position: relative;
@@ -55,39 +55,39 @@
   width: 100%;
   background-color: grey;
 }
-#content .list {
+#content > .list {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   transition: 1s top;
 }
-#content .list > li {
+#content > .list > li {
   position: relative;
   background-position: 50% 50% !important;
 }
-#content .list > li > section {
+#content > .list > li > section {
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  width: 1110px;
+  width: 1100px;
   height: 520px;
   margin: auto;
 }
 /*第一屏 start*/
-#content .list .home {
+#content > .list .home {
   background: url("../img/bg1.jpg") no-repeat;
 }
-#content .list .home .home1 {
+#content > .list .home .home1 {
   position: relative;
   width: 100%;
   height: 100%;
   perspective: 1000px;
   transform-style: preserve-3d;
 }
-#content .list .home .home1 > li {
+#content > .list .home .home1 > li {
   position: absolute;
   top: 0;
   left: 0;
@@ -98,32 +98,32 @@
   align-items: center;
   visibility: hidden;
 }
-#content .list .home .home1 > li.active {
+#content > .list .home .home1 > li.active {
   visibility: visible;
 }
-#content .list .home .home1 > li:nth-child(1) {
+#content > .list .home .home1 > li:nth-child(1) {
   background: #dc6c5f;
 }
-#content .list .home .home1 > li:nth-child(2) {
+#content > .list .home .home1 > li:nth-child(2) {
   background: #95dc84;
 }
-#content .list .home .home1 > li:nth-child(3) {
+#content > .list .home .home1 > li:nth-child(3) {
   background: #64b9d2;
 }
-#content .list .home .home1 > li:nth-child(4) {
+#content > .list .home .home1 > li:nth-child(4) {
   background: #000000;
 }
-#content .list .home .home1 > li > .item {
+#content > .list .home .home1 > li > .item {
   color: white;
 }
-#content .list .home .home2 {
+#content > .list .home .home2 {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 5px;
   text-align: center;
 }
-#content .list .home .home2 > li {
+#content > .list .home .home2 > li {
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -132,17 +132,17 @@
   box-shadow: 0 0 4px rgba(25, 25, 25, 0.8);
   cursor: pointer;
 }
-#content .list .home .home2 > li.active {
+#content > .list .home .home2 > li.active {
   background: #fff;
   cursor: default;
 }
 
 /*从左往右 leftHide rightShow*/
-#content .list .home .home1 > li.leftHide {
+#content > .list .home .home1 > li.leftHide {
   visibility: hidden;
   animation: leftHide 1s 1 linear;
 }
-#content .list .home .home1 > li.rightShow {
+#content > .list .home .home1 > li.rightShow {
   visibility: visible;
   animation: rightShow 1s 1 linear;
 }
@@ -169,11 +169,11 @@
   }
 }
 /*从右往左 leftShow rightHide*/
-#content .list .home .home1 > li.leftShow {
+#content > .list .home .home1 > li.leftShow {
   visibility: visible;
   animation: leftShow 1s 1 linear;
 }
-#content .list .home .home1 > li.rightHide {
+#content > .list .home .home1 > li.rightHide {
   visibility: hidden;
   animation: rightHide 1s 1 linear;
 }
@@ -202,46 +202,46 @@
 
 /*第一屏 end*/
 /*第二屏 start*/
-#content .list .course {
+#content > .list .course {
   background: url("../img/bg2.jpg") no-repeat;
 }
-#content .list .course .course1 {
+#content > .list .course .course1 {
   margin: 50px;
 }
-#content .list .course .course2 {
+#content > .list .course .course2 {
   margin-left: 50px;
   width: 400px;
 }
 
-#content .list .course .course3 {
+#content > .list .course .course3 {
   position: absolute;
   top: 70px;
   right: 50px;
   width: 480px;
 }
-#content .list .course .course3 > .line {
+#content > .list .course .course3 > .line {
   position: absolute;
   top: -7px;
   background: url("../img/plus_row.png");
   width: 9px;
   height: 410px;
 }
-#content .list .course .course3 > .line:nth-of-type(1) {
+#content > .list .course .course3 > .line:nth-of-type(1) {
   left: -5px;
 }
-#content .list .course .course3 > .line:nth-of-type(2) {
+#content > .list .course .course3 > .line:nth-of-type(2) {
   margin-left: 115px;
 }
-#content .list .course .course3 > .line:nth-of-type(3) {
+#content > .list .course .course3 > .line:nth-of-type(3) {
   left: 235px;
 }
-#content .list .course .course3 > .line:nth-of-type(4) {
+#content > .list .course .course3 > .line:nth-of-type(4) {
   left: 355px;
 }
-#content .list .course .course3 > .line:nth-of-type(5) {
+#content > .list .course .course3 > .line:nth-of-type(5) {
   left: 475px;
 }
-#content .list .course .course3 .item {
+#content > .list .course .course3 .item {
   float: left;
   position: relative;
   width: 120px;
@@ -249,8 +249,8 @@
   perspective: 500px;
   transform-style: preserve-3d;
 }
-#content .list .course .course3 .item .face,
-#content .list .course .course3 .item .backface {
+#content > .list .course .course3 .item .face,
+#content > .list .course .course3 .item .backface {
   position: absolute;
   left: 0;
   top: 0;
@@ -261,11 +261,11 @@
   padding: 15px;
   transition: 0.5s transform;
 }
-#content .list .course .course3 .item .face {
+#content > .list .course .course3 .item .face {
   transform: rotateY(180deg);
   backface-visibility: hidden;
 }
-#content .list .course .course3 .item .backface {
+#content > .list .course .course3 .item .backface {
   background-position: 50% 50% !important;
 }
 #content > .list > .course .course3 .item:nth-of-type(1) .backface {
@@ -304,27 +304,27 @@
 #content > .list > .course .course3 .item:nth-of-type(12) .backface {
   background: url(../img/leonberg.png) no-repeat;
 }
-#content .list .course .course3 .item:hover .face {
+#content > .list .course .course3 .item:hover .face {
   transform: rotateY(360deg);
 }
-#content .list .course .course3 .item:hover .backface {
+#content > .list .course .course3 .item:hover .backface {
   transform: rotateY(180deg);
 }
 
 /*第二屏 end*/
 
 /*第三屏 start*/
-#content .list .works {
+#content > .list .works {
   position: relative;
   background: url("../img/bg2.jpg") no-repeat;
 }
-#content .list .works .works1 {
+#content > .list .works .works1 {
   margin: 50px 0 100px 50px;
 }
-#content .list .works .works2 {
+#content > .list .works .works2 {
   margin-left: 50px;
 }
-#content .list .works .works2 > .item {
+#content > .list .works .works2 > .item {
   position: relative;
   float: left;
   overflow: hidden;
@@ -332,13 +332,13 @@
   width: 220px;
   height: 133px;
 }
-#content .list .works .works2 > .item img {
+#content > .list .works .works2 > .item img {
   transition: 1s transform;
 }
-#content .list .works .works2 > .item:last-child {
+#content > .list .works .works2 > .item:last-child {
   width: 332px;
 }
-#content .list .works .works2 > .item > .mask {
+#content > .list .works .works2 > .item > .mask {
   position: absolute;
   left: 0;
   top: 0;
@@ -351,7 +351,7 @@
   opacity: 0;
   transition: 1s opacity;
 }
-#content .list .works .works2 > .item > .mask > .icon {
+#content > .list .works .works2 > .item > .mask > .icon {
   width: 32px;
   height: 34px;
   margin: 0 auto;
@@ -359,16 +359,16 @@
   background: url("../img/zoomico.png") no-repeat;
   transition: 0.5s background-position;
 }
-#content .list .works .works2 > .item:hover img {
+#content > .list .works .works2 > .item:hover img {
   transform: rotate(30deg) scale(1.5);
 }
-#content .list .works .works2 > .item:hover .mask {
+#content > .list .works .works2 > .item:hover .mask {
   opacity: 0.8;
 }
-#content .list .works .works2 > .item > .mask > .icon:hover {
+#content > .list .works .works2 > .item > .mask > .icon:hover {
   background-position: 0 -36px;
 }
-#content .list .works .works3 {
+#content > .list .works .works3 {
   position: absolute;
   left: 900px;
   top: 170px;
@@ -392,10 +392,130 @@
   }
 }
 /*第三屏 end*/
-#content .list .about {
+
+/*第四屏 start*/
+#content > .list .about {
   background: url("../img/bg3.jpg") no-repeat;
 }
-#content .list .team {
+#content > .list .about .about1 {
+  margin: 50px 0 100px 50px;
+}
+#content > .list .about .about2 {
+  width: 400px;
+  margin-left: 50px;
+}
+#content > .list .about .about4 {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 357px;
+  height: 998px;
+  background: url("../img/greenLine.png") no-repeat;
+}
+#content > .list .about .about3 > .item {
+  position: absolute;
+  width: 260px;
+  height: 200px;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  z-index: 2;
+  overflow: hidden;
+}
+#content > .list .about .about3 > .item:nth-child(1) {
+  left: 750px;
+  top: 50px;
+}
+#content > .list .about .about3 > .item:nth-child(2) {
+  left: 600px;
+  top: 290px;
+}
+#content > .list .about .about3 > .item > span,
+#content > .list .about .about3 > .item > ul {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+#content > .list .about .about3 > .item:nth-child(1) > span {
+  background: url("../img/about2.jpg") no-repeat;
+  transform: scale(1.5);
+  transition: 0.5s transform;
+}
+#content > .list .about .about3 > .item:nth-child(2) > span {
+  background: url("../img/about4.jpg") no-repeat;
+  transform: scale(1.5);
+  transition: 0.5s transform;
+}
+#content > .list .about .about3 > .item:hover > span {
+  transform: scale(1);
+}
+#content > .list .about .about3 > .item > ul > li {
+  position: relative;
+  float: left;
+  overflow: hidden;
+}
+#content > .list .about .about3 > .item > ul > li > img {
+  position: absolute;
+  transition: 0.5s left, 0.5s top;
+}
+/*第三屏 end*/
+
+/*第五屏 start*/
+#content > .list .team {
   background: url("../img/bg5.jpg") no-repeat;
 }
+#content > .list .team .team1 {
+  float: left;
+  width: 400px;
+  margin: 50px;
+}
+#content > .list .team .team2 {
+  float: right;
+  width: 400px;
+  margin: 50px;
+}
+#content > .list .team .team3 {
+  position: absolute;
+  width: 944px;
+  height: 448px;
+  left: 50%;
+  margin-left: -472px;
+  top: 250px;
+}
+#content > .list .team .team3 > .list {
+  width: 100%;
+  height: 100%;
+}
+#content > .list .team .team3 > .list li {
+  float: left;
+  height: 100%;
+  background: url("../img/team.png") no-repeat;
+  transition: 1s opacity;
+}
+#content > .list .team .team3 > canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/*第五屏 end*/
+
+/*小圆点 start*/
+#content > .dots {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+}
+#content > .dots > li {
+  width: 15px;
+  height: 15px;
+  border: 5px solid palevioletred;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+#content > .dots > li.active {
+  background-color: #fff;
+}
+/*小圆点 end*/
+
 /*content end*/
