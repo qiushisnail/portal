@@ -1,7 +1,9 @@
 window.onload = function () {
 
   // 获取dom元素
+  let wrap = document.querySelector('#wrap')
   /* 头部dom元素 */
+
   let header = document.querySelector('#header')
   let liNodes = document.querySelectorAll('#header .headMain nav > .list > li')
   let upNodes = document.querySelectorAll('#header .headMain nav > .list > li .up')
@@ -28,7 +30,17 @@ window.onload = function () {
   /*获取页面导航圆点 */
   let navDots = document.querySelectorAll('#content>.dots>li');
 
+  /* 音频 */
+  let music = document.querySelector("#header .headMain .music")
+  let audio = document.getElementById("myaudio")
+
+  /* 开机动画 */
+  let mask = document.querySelector("#mask")
+  let items = document.querySelectorAll("#mask div")
+  let line = document.querySelector("#mask .line")
+
   let now = 0; // 内容屏切换下表
+  let preIndex = 0; // 上一页
   let timer;
   window.onresize = function () {
     contentBind()
@@ -36,15 +48,185 @@ window.onload = function () {
     arrow.style.left = liNodes[now].offsetLeft + liNodes[now].offsetWidth / 2 - arrow.offsetWidth / 2 + 'px'
   }
 
+  // 出入场动画
+  let arrAni = [
+    {
+      inAn() {
+        let home1 = document.querySelector('#content >.list .home .home1')
+        let home2 = document.querySelector('#content >.list .home .home2')
+        home1.style.transform = "translateY(0px)"
+        home2.style.transform = "translateY(0px)"
+
+        home1.style.opacity = 1
+        home2.style.opacity = 1
+      },
+      outAn() {
+        let home1 = document.querySelector('#content >.list .home .home1')
+        let home2 = document.querySelector('#content >.list .home .home2')
+
+        home1.style.transform = "translateY(-400px)"
+        home2.style.transform = "translateY(200px)"
+
+        home1.style.opacity = 0
+        home2.style.opacity = 0
+      }
+    },
+    {
+      inAn() {
+        let plane1 = document.querySelector('#content .course .plane1')
+        let plane2 = document.querySelector('#content .course .plane2')
+        let plane3 = document.querySelector('#content .course .plane3')
+
+        plane1.style.transform = "translate(0px,0px)"
+        plane2.style.transform = "translate(0px,0px)"
+        plane3.style.transform = "translate(0px,0px)"
+      },
+      outAn() {
+        let plane1 = document.querySelector('#content .course .plane1')
+        let plane2 = document.querySelector('#content .course .plane2')
+        let plane3 = document.querySelector('#content .course .plane3')
+
+        plane1.style.transform = "translate(-200px,-200px)"
+        plane2.style.transform = "translate(-200px,200px)"
+        plane3.style.transform = "translate(200px,-200px)"
+      }
+    },
+    {
+      inAn() {
+        let pencel1 = document.querySelector('#content .works .pencel1')
+        let pencel2 = document.querySelector('#content .works .pencel2')
+        let pencel3 = document.querySelector('#content .works .pencel3')
+
+        pencel1.style.transform = "translateY(0px)"
+        pencel2.style.transform = "translateY(0px)"
+        pencel3.style.transform = "translateY(0px)"
+      },
+      outAn() {
+        let pencel1 = document.querySelector('#content .works .pencel1')
+        let pencel2 = document.querySelector('#content .works .pencel2')
+        let pencel3 = document.querySelector('#content .works .pencel3')
+
+        pencel1.style.transform = "translateY(-100px)"
+        pencel2.style.transform = "translateY(100px)"
+        pencel3.style.transform = "translateY(100px)"
+      }
+    },
+    {
+      inAn() {
+        let item1 = document.querySelector("#content > .list .about .about3 > .item:nth-child(1) ")
+        let item2 = document.querySelector("#content > .list .about .about3 > .item:nth-child(2) ")
+        item1.style.transform = "rotate(0deg)"
+        item2.style.transform = "rotate(0deg)"
+      },
+      outAn() {
+        let item1 = document.querySelector("#content > .list .about .about3 > .item:nth-child(1) ")
+        let item2 = document.querySelector("#content > .list .about .about3 > .item:nth-child(2) ")
+        item1.style.transform = "rotate(45deg)"
+        item2.style.transform = "rotate(-45deg)"
+      }
+    },
+    {
+      inAn() {
+        let team1 = document.querySelector("#content > .list .team .team1 ")
+        let team2 = document.querySelector("#content > .list .team .team2 ")
+        team1.style.transform = "translateX(0px)"
+        team2.style.transform = "translateX(0px)"
+      },
+      outAn() {
+        let team1 = document.querySelector("#content > .list .team .team1 ")
+        let team2 = document.querySelector("#content > .list .team .team2 ")
+        team1.style.transform = "translateX(-200px)"
+        team2.style.transform = "translateX(200px)"
+      }
+    }
+  ]
+  arrAni.forEach(arr => {
+    arr.outAn();
+  })
+
+  setTimeout(() => {
+    arrAni[0].inAn();
+  }, 2000)
+
+  // 开机动画
+  loadAni();
+  function loadAni() {
+    let flag = 0;
+    let arr = ['bg1.jpg', 'bg2.jpg', 'bg3.jpg', 'bg4.jpg', 'bg5.jpg', 'about1.jpg', 'about2.jpg', 'about3.jpg', 'about4.jpg', 'worksimg1.jpg', 'worksimg2.jpg', 'worksimg3.jpg', 'worksimg4.jpg', 'team.png', 'greenLine.png'];
+    arr.forEach((a) => {
+      var img = new Image();
+      img.src = "../img/" + a;
+      img.onload = function () {
+        flag++;
+        line.style.width = flag / arr.length * 100 + "%";
+
+      }
+    })
+    line.addEventListener('transitionend', function () {
+      items.forEach(item => item.style.height = 0);
+      line.remove();
+    })
+    items[0].addEventListener('transitionend', function () {
+      mask.remove();
+      home3D();
+      audioPlay();
+    })
+  }
+
+  // 音频播放
+
+  function audioPlay() {
+
+
+    player();
+
+    music.addEventListener('click', function () {
+      // wrap.removeEventListener('mouseenter', fn)
+      if (audio.paused) {
+        audio.play()
+        audio.muted = false;
+      } else {
+        audio.muted = true;
+        audio.pause();
+      }
+    })
+
+    function player() {
+      var t2 = 2222500; //音频的长度，确保能够完整的播放给用户
+      var play = false;
+      function run() {
+        if (play) {
+          return false;
+        }
+        audio.currentTime = 0; //设置播放的音频的起始时间
+        audio.volume = 0.5; //设置音频的声音大小
+        audio.muted = false; //关闭静音状态
+        play = true;
+        setTimeout(function () {
+          play = false;
+          audio.muted = true; //播放完毕，开启静音状态
+        }, t2);
+      }
+      setInterval(function () {
+        run(); //假装在轮询服务器，或者从websocket拉取数据
+      }, 1);
+    }
+
+  }
+
   // 点击导航圆点，切换导航
   changeDots();
   function changeDots() {
+
+
     navDots.forEach((dot, index) => {
       dot.addEventListener('click', (ev) => {
         ev = ev || event;
-
-
+        preIndex = now;
         navMove(index)
+        now = index;
+
+
       })
     })
   }
@@ -92,7 +274,6 @@ window.onload = function () {
     }
     // canvas动画
     function createCanvas(liNode) {
-      console.log(liNode.offsetLeft)
       if (!oc) {
         oc = document.createElement("canvas");
         oc.width = teamLiNodes[0].offsetWidth;
@@ -223,7 +404,7 @@ window.onload = function () {
   let oldIndex = 0;
   let autoIndex = 0;
   let timer3D;
-  home3D();
+
   function home3D() {
     home2LiNodes.forEach((h, index) => {
       h.addEventListener('click', () => {
@@ -333,6 +514,7 @@ window.onload = function () {
       } else if (ev.detail) {
         dir = ev.detail < 0 ? 'up' : 'down'
       }
+      preIndex = now;
       switch (dir) {
         case 'up':
           if (now > 0) {
@@ -372,13 +554,13 @@ window.onload = function () {
 
     liNodes.forEach((liNode, index) => {
       liNode.addEventListener('click', function () {
+        preIndex = now;
         navMove(index);
         now = index;
       })
     })
   }
 
-  navMove(4)
   function navMove(index) {
 
     let li = liNodes[index];
@@ -393,6 +575,15 @@ window.onload = function () {
       node.classList.remove('active')
     });
     navDots[index].classList.add('active')
+
+    // 出入场
+    if (arrAni[index] && typeof arrAni[index]["inAn"] === 'function') {
+      arrAni[index].inAn();
+    }
+    if (arrAni[preIndex] && typeof arrAni[preIndex]["outAn"] === 'function') {
+      arrAni[preIndex].outAn();
+    }
+
 
   }
 }

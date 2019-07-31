@@ -15,6 +15,13 @@
   float: left;
   margin-top: 30px;
 }
+#header .headMain .music {
+  float: left;
+  width: 14px;
+  height: 14px;
+  margin: 50px 0 0 5px;
+  background: url("../img/musicon.gif");
+}
 #header .headMain nav {
   float: right;
   margin-top: 50px;
@@ -65,6 +72,7 @@
 #content > .list > li {
   position: relative;
   background-position: 50% 50% !important;
+  overflow: hidden;
 }
 #content > .list > li > section {
   position: absolute;
@@ -206,11 +214,15 @@
   background: url("../img/bg2.jpg") no-repeat;
 }
 #content > .list .course .course1 {
+  position: relative;
   margin: 50px;
+  z-index: 2;
 }
 #content > .list .course .course2 {
+  position: relative;
   margin-left: 50px;
   width: 400px;
+  z-index: 2;
 }
 
 #content > .list .course .course3 {
@@ -218,6 +230,7 @@
   top: 70px;
   right: 50px;
   width: 480px;
+  z-index: 2;
 }
 #content > .list .course .course3 > .line {
   position: absolute;
@@ -319,9 +332,13 @@
   background: url("../img/bg2.jpg") no-repeat;
 }
 #content > .list .works .works1 {
+  position: relative;
+  z-index: 2;
   margin: 50px 0 100px 50px;
 }
 #content > .list .works .works2 {
+  position: relative;
+  z-index: 2;
   margin-left: 50px;
 }
 #content > .list .works .works2 > .item {
@@ -331,6 +348,7 @@
   margin-right: 1px;
   width: 220px;
   height: 133px;
+  z-index: 2;
 }
 #content > .list .works .works2 > .item img {
   transition: 1s transform;
@@ -370,6 +388,7 @@
 }
 #content > .list .works .works3 {
   position: absolute;
+  z-index: 2;
   left: 900px;
   top: 170px;
   height: 191px;
@@ -519,3 +538,107 @@
 /*小圆点 end*/
 
 /*content end*/
+
+/* 出入场动画 start*/
+#content > .list .home .home1,
+#content > .list .home .home2 {
+  transition: 1s transform, 1s opacity;
+}
+
+#content .course .plane1 {
+  width: 359px;
+  height: 283px;
+  background: url(../img/plane1.png) no-repeat;
+  position: absolute;
+  left: 300px;
+  top: -100px;
+  transition: 1s transform;
+}
+#content .course .plane2 {
+  width: 309px;
+  height: 249px;
+  background: url(../img/plane2.png) no-repeat;
+  position: absolute;
+  left: -100px;
+  top: 200px;
+  transition: 1s transform;
+}
+#content .course .plane3 {
+  width: 230px;
+  height: 182px;
+  background: url(../img/plane3.png) no-repeat;
+  position: absolute;
+  left: 300px;
+  top: 400px;
+  transition: 1s transform;
+}
+
+#content .works .pencel1 {
+  width: 180px;
+  height: 97px;
+  background: url(../img/pencel1.png) no-repeat;
+  position: absolute;
+  transition: 1s transform;
+  left: 500px;
+  top: 0;
+}
+#content .works .pencel2 {
+  width: 268px;
+  height: 38px;
+  background: url(../img/pencel2.png) no-repeat;
+  position: absolute;
+  transition: 1s transform;
+  left: 300px;
+  top: 250px;
+}
+#content .works .pencel3 {
+  width: 441px;
+  height: 231px;
+  background: url(../img/pencel3.png) no-repeat;
+  position: absolute;
+  transition: 1s transform;
+  left: 650px;
+  top: 300px;
+}
+#content > .list .about .about3 > .item {
+  transition: 1s transform;
+}
+#content > .list .team .team1,
+#content > .list .team .team2 {
+  transition: 1s transform;
+}
+/* 出入场动画 end*/
+
+/* 开机动画 start*/
+#mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+#mask .up {
+  width: 100%;
+  height: 50%;
+  background-color: deepskyblue;
+  transition: 1s height;
+}
+#mask .down {
+  width: 100%;
+  height: 50%;
+  background-color: deepskyblue;
+  transition: 1s height;
+  position: absolute;
+  bottom: 0;
+}
+
+#mask .line {
+  position: absolute;
+  z-index: 102;
+  height: 4px;
+  top: 50%;
+  margin-top: -2px;
+  background-color: #fff;
+  width: 0;
+  transition: 1s width;
+}
+/* 开机动画 end*/
